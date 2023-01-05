@@ -1,0 +1,23 @@
+. JSX
+Jsx is syntax is neither a string nor HTML it's called JSX. It is a syntax extention of javascript.JSX produces React “elements”. We will explore rendering them to the DOM in the next section. Below, you can find the basics of JSX necessary to get you started.
+
+. React.createElement vs Jsx
+Each JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). So, anything you can do with JSX can also be done with just plain JavaScript.
+
+.jsx benifit
+JSX helps us in keeping our code simpler and elegant when writing large pieces of code.
+According to the React docs, most people find it helpful as a visual aid when working with UI inside the JavaScript code.
+JSX also allows React to show more useful error and warning messages.
+If one is familiar with HTML, it is quite easy to use JSX when building React application
+Faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+
+.Behind the scenes of JSX
+It is an JavaScript extension where we can embed valid JavaScript objects into HTML elements. JSX makes Code easier to read and understand. Usually, HTML and JavaScript is written separately but react creates components that contain both HTML and JavaScript. So, if you are familiar with HTML you can easily modify your code using JSX.
+
+.component
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+.what is function component
+A React functional component is a simple JavaScript function that accepts props and returns a React element. After the introduction of React Hooks, writing functional components has become the ​standard way of writing React components in modern applications.
+
+.composing component
+Component composition is the name for passing components as props to other components, thus creating new components with other components.
