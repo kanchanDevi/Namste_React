@@ -1,0 +1,25 @@
+#title1{
+    background-color: yellow;
+    
+}
+.header_content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    background-color: aquamarine;
+}
+.avatar{
+    border:1px black solid;
+    border-radius: 50px;
+}
+.searchBar{
+    border:0px;
+    height:30px;
+    border-radius: 12px;
+    text-align: center;
+    color:black;
+}
+placeholder{
+    color:black;
+}
