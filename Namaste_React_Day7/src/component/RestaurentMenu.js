@@ -4,29 +4,28 @@ import { IMG_URL } from "../constent";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
-  const [restaurant, setRestauraunt] = useState([]);
+  const { resid } = useParams(); //mistake 1: use the same param name which you passed in app.js
+  const [restaurant, setRestauraunt] = useState(null); //mistake 2: set null as default, because restaurant will be an object not array
 
- 
- useEffect(() => {
-       getRestaurantInfo();
-     }, []);
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
 
-     async function getRestaurantInfo() {
-       const data = await fetch(
-         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.904472&lng=80.092805&menuId=" + resId
-       );
-       const json = await data.json();
-       console.log(json);
-       setRestauraunt(json?.data?.cards);
-     }
+  async function getRestaurantInfo() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/menu/v4/full?menuId=" + resid //mistake 3: Used the wrong URL to fetch details of menu
+    );
+    const json = await data.json();
+    console.log("menu-", json);
+    setRestauraunt(json?.data);
+  }
 
   return !restaurant ? (
     <Shimmer />
   ) : (
     <div className="menu">
       <div>
-        <h1>Restraunt id: {resId}</h1>
+        <h1>Restraunt id: {resid}</h1>
         <h2>{restaurant?.name}</h2>
         <img src={IMG_URL + restaurant?.cloudinaryImageId} />
         <h3>{restaurant?.area}</h3>
@@ -37,10 +36,9 @@ const RestaurantMenu = () => {
       <div>
         <h1>Menu</h1>
         <ul>
-           {(restaurant?.menu?.items).map((item) => (
+          {Object.values(restaurant?.menu?.items)?.map((item) => (
             <li key={item.id}>{item.name}</li>
-         ))}
-        
+          ))}
         </ul>
       </div>
     </div>
