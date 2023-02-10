@@ -4,7 +4,7 @@ const store=configureStore({
 
     reducer:{
         cart:Cartslice
-    }
-})
+    },
+});
 
 export default store

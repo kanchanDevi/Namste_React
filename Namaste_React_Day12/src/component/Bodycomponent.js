@@ -25,7 +25,7 @@ useEffect(()=>{
 const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.904472&lng=80.092805&page_type=DESKTOP_WEB_LISTING");
 
 const json= await data.json();
-console.log(json);
+console.log(json,'df');
 setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards)
 setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
 

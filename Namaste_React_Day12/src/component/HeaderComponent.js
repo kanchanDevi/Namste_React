@@ -8,6 +8,7 @@ const HeaderComponent = () => {
   const {user}=useContext(UserContext)
 
   const cartItems =useSelector((store)=>store.cart.items)
+  console.log(cartItems)
     return (
       <>
         <div className="flex justify-between bg-pink-700 ">
@@ -16,7 +17,7 @@ const HeaderComponent = () => {
             <ul className="flex p-8 text-white">
             <Link to= "/"><li className="px-5">Home</li></Link>
               <Link to= "/about"> <li className="px-5">About</li></Link>
-              <Link to= "/cart"><li className="px-5">Cart{cartItems}</li></Link>
+              <Link to= "/cart"><li className="px-5">Cart{cartItems.length}</li></Link>
 
               <Link to= "/instamart"> <li className="px-5">Instamart</li></Link>
               <p>{user.name}</p>

@@ -13,6 +13,7 @@ const useRestaurant=(resid)=>{
         FETCH_URL + resid //mistake 3: Used the wrong URL to fetch details of menu
         );
         const json = await data.json();
+        console.log(json);
         
         setRestauraunt(json.data);
       }
